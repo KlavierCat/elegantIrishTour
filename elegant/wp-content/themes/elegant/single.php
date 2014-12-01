@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * The Template for displaying all single posts
  *
@@ -12,7 +12,7 @@ get_header(); ?>
 </head>
 
 <body>
-    <div class="menu-top slidePoint">	
+    <div class="menu-top slidePoint">
         <div class="container clearfix">
             <div id="logo" class="fleft">
                 <a href="<?php bloginfo('url');?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt=""/></a>
@@ -21,15 +21,15 @@ get_header(); ?>
             <div id="nav" class="fright">
                 <a href="<?php bloginfo('url');?>"><i class="icon-reply"></i></a>
             </div>
-	   
+
         </div>
-    
+
     </div>
         <div class="container clearfix" style="margin-top: 90px;">
             <div class="grid_12" style="margin-bottom: 0">
                 <?php if (have_posts()):?>
                 <?php while (have_posts()): the_post();?>
-                <div class="grid_6"> 
+                <div class="grid_6">
                  <div class="cycle-slideshow featured-image" data-cycle-fx="scrollHorz" data-cycle-timeout="2000">
                     <div class="cycle-pager"></div>
                     <div class="cycle-caption"></div>
@@ -43,27 +43,25 @@ get_header(); ?>
                               ?>" alt=""/>
                    </div>
                 </div>
-                
+
                 <div class="grid_6" style="margin-right: 0;">
-                    
+
                   <ul class="tour-meta">
-                        <li><i class="icon-map-marker"></i><strong><?php the_title(); ?></strong></li>				
-                        	
-                        <!--<li><i class="icon-money"></i><span></span><strong>Price:</strong> $589</li>-->		
+                        <li><i class="icon-map-marker"></i><strong><?php the_title(); ?></strong></li>
                     </ul>
                  <p><?php the_content(); ?></p>
                  <!--<input type="submit" class="contact_btn send_btn" value="Book Now" />-->
                         <input type="reset" class="contact_btn" value="Ask a Question" onclick="window.location='<?php bloginfo('url');?>#contactForm'" />
-					
+
                 </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
-            </div>  
+            </div>
             <div class="clear"></div>
              <div style="height:230px;">&nbsp;</div>
-                 
+
         </div>
 
-<!--WP: Footer--> 
+<!--WP: Footer-->
     <div id="footer">
         <?php get_footer(); ?>
