@@ -70,14 +70,14 @@ ul.navigation {
 	color: #A0CE4E;
 }
 
-/* General Slides */ 
+/* General Slides */
 
 .slidePoint{
 	overflow:hidden;
 	background-attachment: fixed;
 	width:100%;
 	height:auto;
-	
+
 	padding:0;
 }
 h1 {
@@ -131,7 +131,7 @@ img.icon_img {
 
 /*______________________________________Slide0______________________________________*/
 #slide0{
-	
+
 	width:100%;
     background-color: #1b1b1b;
 	text-align:left;
@@ -148,7 +148,7 @@ img.icon_img {
     z-index: 10001;
 }
 #img_chose{ cursor: pointer}
-/* ____________________________________ Slide 1 ____________________________________ */ 
+/* ____________________________________ Slide 1 ____________________________________ */
 
 .form_bg {
 	background:url(../images/slide8_bg.png) no-repeat left top;
@@ -167,7 +167,7 @@ img.icon_img {
 	background-size: cover !important;
 	width:100%;
 	background-position:0 0 !important;
-	
+
 }
 .filtr_bg {
 	margin-bottom:90px;
@@ -214,13 +214,13 @@ a.button:hover {cursor:pointer;text-decoration:none;
 }
 
 
-/* ____________________________________ Slide 2 ____________________________________ */ 
+/* ____________________________________ Slide 2 ____________________________________ */
 
 #slide2 img {
 	max-width: 100%;
 }
 #slide2{
-	background-image:url(../images/slide2_bg.jpg);
+	/*background-image:url(../images/slide2_bg.jpg);*/
 	background-size: cover !important;
 	width:100%;
 	background-position:0 0 !important;
@@ -230,7 +230,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 	padding:130px 0 130px;
 }
 
-/* ____________________________________ Slide 3 ____________________________________ */ 
+/* ____________________________________ Slide 3 ____________________________________ */
 
 #slide3 img {
 	max-width: 100%;
@@ -253,7 +253,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
     padding-bottom: 96px;
     position: relative;
     text-align: center;
-   
+
 }
 .serv_block:hover {
     background: none repeat scroll 0 0 #ffffff;
@@ -262,7 +262,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 }
 .icon_block1, .icon_block2, .icon_block3 {
     height: 118px;
-   
+
 }
 .icon_block1 {
     background: url("../images/icon1.png") no-repeat scroll -340px 0 transparent;
@@ -335,7 +335,7 @@ width: 81px; clear:both !important
 /* ________________ team_block _________________ */
 .team_block {
 	text-align:center;
-	
+
 }
 .team_block h4 {
 	margin:-64px 0 9px;
@@ -352,13 +352,13 @@ width: 81px; clear:both !important
 .team_block p {
 	margin:0 20px 10px 20px;
 	padding:0 0 15px 0;
-	text-transform:uppercase;
 	border-bottom:1px solid #d9d9d9;
 	font-size:14px;
 	color:#939393;
 }
 ul.team_soc {
 	margin:10px 0 12px 0;
+	text-transform:uppercase;
 	padding:0;
 }
 .team_soc li {display:inline-block;}
@@ -400,7 +400,7 @@ a.soc4:hover {
 
 /* _______________ //team_block ________________ */
 
-/* ___________________________________ //Slide 3 ___________________________________ */ 
+/* ___________________________________ //Slide 3 ___________________________________ */
 
 
 
@@ -425,7 +425,7 @@ a.soc4:hover {
 
 
 
-/* ____________________________________ Slide 5 ____________________________________ */ 
+/* ____________________________________ Slide 5 ____________________________________ */
 #slide5{
 	background:#f1f1f1;
 	padding:76px 0 76px;
@@ -496,7 +496,7 @@ a.soc4:hover {
 .ui-accordion-header {
     font-size: 14px;
     line-height: 36px;
-    
+
 }
 /* _____________________________ Tours _____________________________________ */
 a.tours_block:hover {
@@ -578,7 +578,7 @@ p.hot_date {
     margin-top: 12px;
 }
 .extra_trip {
-    padding: 5px 0 5px 0; 
+    padding: 5px 0 5px 0;
     border-top:1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
@@ -594,7 +594,7 @@ p.hot_date {
     background-color: #032009;
     padding: 10px 30px 8px 30px;
     color: #ffffff;
-    
+
     margin-right: 1px;
     cursor: pointer;
 }
@@ -611,7 +611,7 @@ p.hot_date {
   margin-right: auto;
   clear: both;
 }
-.content_txt 
+.content_txt
 {
     font-family: 'Open sans', sans-serif;
     font-weight:400;
@@ -719,7 +719,7 @@ p.hot_date {
     margin-bottom: 0;
     margin-top: 20px;
     padding: 0;
-    
+
     border-bottom: 3px solid #093210;
 }
 
@@ -731,7 +731,7 @@ p.hot_date {
 .box img,
 #tumblelog img {
   display: block;
-  
+
 }
 #city_folio{
     margin-left: -35px;
@@ -740,7 +740,7 @@ p.hot_date {
      display: inline;
     padding: 20px;
     background-color: #032009;
-    color: #ffffff; 
+    color: #ffffff;
 }
 #city_folio li:hover {
     background-color: #09340F;
@@ -755,7 +755,7 @@ cursor: pointer;
 
 .rtl .box {
   float: right;
-  text-align: right; 
+  text-align: right;
   direction: rtl;
 }
 
@@ -781,10 +781,10 @@ cursor: pointer;
       -ms-transition-duration: 2s;
        -o-transition-duration: 2s;
           transition-duration: 2s;
-        
+
 }
 
-.transitions-enabled.masonry 
+.transitions-enabled.masonry
 {
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
@@ -793,9 +793,9 @@ cursor: pointer;
           transition-property: height, width;
 }
 
-.transitions-enabled.masonry  .masonry-brick 
+.transitions-enabled.masonry  .masonry-brick
 {
-    
+
   -webkit-transition-property: left, right, top;
      -moz-transition-property: left, right, top;
       -ms-transition-property: left, right, top;
@@ -816,7 +816,7 @@ cursor: pointer;
 /* ____________________________ //Tours ____________________________________ */
 
 
-/* ___________________________________ //Slide 5 ___________________________________ */ 
+/* ___________________________________ //Slide 5 ___________________________________ */
 
 /* ____________________________________ Slide 6 ____________________________________ */
 
@@ -864,7 +864,7 @@ cursor: pointer;
 #slide8{
 	background-color:#f1f1f1;
 	width:100%;
-    
+
 }
 #slide8 .grid_12 {width:auto;float:none;}
 .padding_slide8 {position:relative;
@@ -879,7 +879,7 @@ a.hol_offers {
 }
 
 .extra_trip_top {
-    padding: 20px 0 15px 0;   
+    padding: 20px 0 15px 0;
 }
 .extra_trip_top span
 {
@@ -894,9 +894,9 @@ a.hol_offers {
     font-weight: 400;
     }
 .extra_trip_top i span{ margin-left: 4px;}
-.extra_trip_top .icon-map-marker{ float: right;}    
+.extra_trip_top .icon-map-marker{ float: right;}
 .extra_trip_top .icon-comment{ float: left;}
-    
+
 /* ____________________ order_block ___________________ */
 .travel_form {
 	margin:0;
@@ -914,7 +914,7 @@ a.hol_offers {
 	font-size:14px;
 	line-height:39px;
 	padding:0 14px;
-}	
+}
 .order_block label {
 	vertical-align:top;
 	margin:0 22px 0 0;
@@ -1175,14 +1175,14 @@ img.calendar_link {
           transform: scale(1.2);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 .hover-item:hover {
-    
+
     -webkit-transition: all 0.5s ease 0s;  /* Chrome 1-25, Safari 3.2+ */
      -moz-transition:  all 0.5s ease 0s; /* Firefox 4-15 */
        -o-transition:  all 0.5s ease 0s;  /* Opera 10.50–12.00 */
           transition:  all 0.5s ease 0s;
 }
 .hover-item:hover .item-caption, .hover-item:hover .lw-item-caption-container a {
-    
+
     -webkit-transition: all 0.3s ease 0s;  /* Chrome 1-25, Safari 3.2+ */
      -moz-transition:  all 0.3s ease 0s; /* Firefox 4-15 */
        -o-transition:  all 0.3s ease 0s;  /* Opera 10.50–12.00 */
@@ -1294,7 +1294,7 @@ img.calendar_link {
 .send_btn {
 	background:#093210;
 	border:1px solid #072A0F;
-	
+
 }
 
 #note .notification_ok {
@@ -1390,7 +1390,7 @@ ul.foot_block_intouch {
 	margin:66px 0 0 0;
 }
 
-/* ___________________________________ //Slide 10 ___________________________________ */ 
+/* ___________________________________ //Slide 10 ___________________________________ */
 
 
 /* ____________________________________ FOOTER ____________________________________ */
@@ -1472,15 +1472,22 @@ h1{
 
 }
 
-    #city_folio .active{
-        color:#a0ce4e;
-    }
+#city_folio .active{
+    color:#a0ce4e;
+}
+
+#map {
+	float:left;
+	width:1000px;
+	height:600px;
+	margin-bottom: 20px;
+	-moz-box-shadow:0 0 5px #ddd;
+	-webkit-box-shadow:0 0 5px #ddd;
+	box-shadow:0 0 5px #ddd;
+	background-color:#C6ECFF;
+}
 /*
 #footer{
     margin-top:20%;
 }
 */
-
-
-
-
