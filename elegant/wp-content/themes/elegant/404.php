@@ -17,7 +17,6 @@ get_header(); ?>
             <div id="logo" class="fleft">
                 <a href="<?php bloginfo('url');?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt=""/></a>
             </div>
-        <a id="topBar" name="topBar"></a>
             <div id="nav" class="fright">
                 <a href="<?php bloginfo('url');?>"><i class="icon-reply"></i></a>
             </div>
@@ -36,4 +35,5 @@ get_header(); ?>
 
 <!--WP: Footer-->
     <div id="footer">
+      <div class="container clearfix">
         <?php get_footer(); ?>

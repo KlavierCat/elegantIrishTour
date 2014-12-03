@@ -14,7 +14,6 @@
                 <a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt=""/></a>
             </div>
 
-          <a id="topBar" name="topBar"></a>
             <div id="nav" class="fright">
                 <ul class="navigation">
                     <li data-slide="2">Home</li>
@@ -451,5 +450,6 @@
 			</script>
         <!--And Slider-->
 
-
-<?php get_footer(); ?>
+      <div class="container clearfix">
+        <div id="back_top"><a class="button" title="" data-slide="2"></a></div>
+        <?php get_footer(); ?>
