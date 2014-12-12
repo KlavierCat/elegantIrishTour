@@ -1,6 +1,6 @@
   <?php get_header(); ?>
   <script src="<?php echo get_template_directory_uri();?>/js/leaflet.js"></script>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/leaflet.css" rel="stylesheet"/>
+  <script src="<?php echo get_template_directory_uri();?>/js/attractions.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,6 @@
                     <li data-slide="4">Tours</li>
                     <li data-slide="6">Gallery</li>
                     <li data-slide="10">Contact</li>
-
                 </ul>
                 <div class="clear"></div>
             </div>
@@ -59,8 +58,8 @@
 
 <div class="slidePoint" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
 	<div class="container clearfix">
+    <div class="container clearfix" id="bg-go-here">
 
-        <img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon2.jpg" alt=""/>
 		<h4>Our Fleet</h4>
 	    <div class="grid_12 history">
 
@@ -94,17 +93,22 @@
                 <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
             </div><!--Categories: Fleet-->
         </div><!--grid_12 history-->
+      </div><!--inner container clear fix-->
 
 <!--WP: Content/similar to a widget: Map-->
-    <div id="mobile-hide">
+    <div class="mobile-hide">
       <div class="clear"></div>
 
-	    <img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon3.jpg" alt=""/>
 	    <h4>What To See</h4>
 	    <div class="clear"></div>
 
 		  <div class="relative">
-			   <div id="map"></div>
+			   <div id="map">
+           <div id="map-nav">
+             <div class="map-explain">Click the <img src="<?php echo get_template_directory_uri();?>/images/favicon.png"/> for more</div>
+           </div>
+             <!--onload = load <ul>-->
+         </div>
          <script src="<?php echo get_template_directory_uri();?>/js/map.js"></script>
 		  </div>
 
@@ -135,8 +139,9 @@
         <div  class="grid_12" style="margin-bottom: 0;"><!--Category: tours-->
 	          <ul id="city_folio">
 	              <li id="africa_folio" class="active">Day Tours</li>
-	              <li id="europe_folio">Multiple Day Tours</li>
-                  <li id="america_folio">Speciality Tours</li>
+	              <li id="europe_folio">Multi-Day Tours</li>
+                <li id="america_folio">Golf Tours</li>
+                <li id="asia_folio">Shore Tours</li>
 	          </ul>
 
             <div><!--Categories: Day Tours-->
@@ -174,7 +179,7 @@
             </div><!--Categories: Day Tours-->
 
             <div><!--Categories: Multiple Day Tours-->
-                <?php $loop = new WP_Query( array('post_type'=>'multiple_day_tours', 'posts_per_page'=>6)); ?>
+                <?php $loop = new WP_Query( array('post_type'=>'multi_day_tours', 'posts_per_page'=>6)); ?>
                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class="europe box col4 hover-item">
 	               <div class="view view-first">
@@ -205,10 +210,10 @@
 	              </div>
 	            </div><!--end post-->
                 <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
-            </div><!--Categories: Multiple Day Tours-->
+            </div><!--Categories: Multi Day Tours-->
 
-            <div><!--Categories: Speciality Tours-->
-                <?php $loop = new WP_Query( array('post_type'=>'speciality_tours', 'posts_per_page'=>6)); ?>
+            <div><!--Categories: Golf Tours-->
+                <?php $loop = new WP_Query( array('post_type'=>'golf_tours', 'posts_per_page'=>6)); ?>
                 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 <div class="america box col4 hover-item">
 	               <div class="view view-first">
@@ -239,7 +244,41 @@
 	              </div>
 	            </div><!--end post-->
                 <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
-            </div><!--Categories: Speciality Tours-->
+            </div><!--Categories: Golf Tours-->
+
+            <div><!--Categories: Shore Tours-->
+                <?php $loop = new WP_Query( array('post_type'=>'shore_tours', 'posts_per_page'=>6)); ?>
+                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <div class="asia box col4 hover-item">
+                 <div class="view view-first">
+                       <!--have to find a way to insert this img, TWICE!-->
+                        <img class="imgTop" alt="Ipsum" src="<?php
+                              if (class_exists('Dynamic_Featured_Image')){
+                                  global $dynamic_featured_image;
+                                  $featured_images = $dynamic_featured_image->get_featured_images();
+                                  echo $featured_images[0]['full'];
+                              }
+                              ?>"/>
+                      <div class="abs">
+                            <a class="fancybox zoom info" href="<?php
+                              if (class_exists('Dynamic_Featured_Image')){
+                                  global $dynamic_featured_image;
+                                  $featured_images = $dynamic_featured_image->get_featured_images();
+                                  echo $featured_images[0]['full'];
+                              }
+                              ?>"></a>
+                            <a class="link info" href="<?php the_permalink(); ?>"></a>
+                        </div>
+                  </div>
+                <div class="layer_txt">
+                    <h3><a title="<?php the_title(); ?>" rel=""><?php the_title(); ?></a></h3>
+                      <div class="clear"></div>
+                    <p class="content_txt"><?php the_excerpt(); ?> </p>
+                    <div class="content_price"><a class="price_folio" href="<?php the_permalink(); ?>">More Info</a></div>
+                </div>
+              </div><!--end post-->
+                <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
+            </div><!--Categories: Shore Tours-->
 
           </div><!--Category: tours-->
     </div>
@@ -286,7 +325,6 @@
 
 <!--WP: End of Widget of gallery slider-->
 
-
 <!--WP: Widget of Contact Form-->
     <div class="slidePoint" id="slide10" data-slide="10" data-stellar-background-ratio="0.5" >
 
@@ -298,8 +336,8 @@
 		</div>
 		<div class="clear"></div>
 
-		<div class="grid_4 serv_block_contact form_contact" >
-			<img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon5.jpg" alt=""/>
+		<div class="grid_6 serv_block_contact form_contact" >
+			<!--<img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon5.jpg" alt=""/>-->
 			<h4>Contact form</h4>
 			<div class="clear"></div>
 			<div class="contact_form">
@@ -317,28 +355,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="grid_4 contact_det_block serv_block_contact details_contact">
-			<img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon4.jpg" alt=""/>
+		<div class="grid_5 contact_det_block serv_block_contact details_contact">
+<!--			<img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon4.jpg" alt=""/>-->
 			<h4>Details</h4>
 			<div class="clear"></div>
 			<ul class="foot_block_intouch">
-				<li class="touch_phone"><p>353 89 969 5499, UK: 0800 7834 191</p></li>
-				<li class="touch_clock"><p>Mon - sun 9AM to 5PM</p></li>
+				<li class="touch_phone"><p>353 89 969 5499</p></li>
+				<li class="touch_clock"><p>Mon - Sun 9AM to 5PM</p></li>
 				<li class="touch_mail"><a href="mailto:info@elegantirishtours.com"> info@elegantirishtours.com</a></li>
 				<li class="touch_site"><a href="javascript:void(0);"> http://www.elegantirishtours.com</a></li>
-				<li class="touch_adress"><p>Westerton House, Westerton Rise, Ballinteer - Dublin 16, Ireland</p></li>
+				<li class="touch_adress"><p>14 Lower O'Connell Street, Dublin 1, Ireland</p></li>
+        <li class="facebook"><a href="javascript:void(0);">https://www.facebook.com/elegantirishtours</a></li>
                 <div style="height:25px;"></div>
 			</ul>
-		</div>
-		<div class="grid_4 contact_det_block omega serv_block_contact">
-			<img class="icon_img" src="<?php echo get_template_directory_uri();?>/images/icon6.jpg" alt=""/>
-			<h4>Get Social</h4>
-			<div class="clear"></div>
-			<ul class="foot_block_intouch">
-              <li class="facebook"><a href="javascript:void(0);">http://facebook.com/companyname</a></li>
-			  <li class="twitter"><a href="javascript:void(0);">http://twitter.com/companyname</a></li>
-              <div style="height:165px;"></div>
-            </ul>
 		</div>
 		<div class="clear"></div>
 
@@ -346,7 +375,7 @@
 <!--WP: End of Widget of Contact Form-->
 
 <!--WP: Widget of Map-->
-	<div id="map_block"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=+&amp;q=Westerton+House,+Westerton+Rise,+Ballinteer+-+Dublin+16,+Ireland&amp;ie=UTF8&amp;hq=Westerton+House,+Westerton+Rise,+Ballinteer+-+Dublin+16,+Ireland&amp;hnear=&amp;radius=15000&amp;t=m&amp;ll=53.173676,-6.289774&amp;spn=0.336395,0.088603&amp;output=embed"></iframe></div>
+	<div id="map_block"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ie/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=+&amp;q=14+O%27Connell+Street+Lower,+Dublin,+County+Dublin,+Ireland&amp;ie=UTF8&amp;hq=14+O%27Connell+Street+Lower,+Dublin,+County+Dublin,+Ireland&amp;hnear=&amp;radius=15000&amp;t=m&amp;ll=53.3486676,-6.259647&amp;spn=0.0049187,0.0109864&amp;output=embed"></iframe></div>
 
 </div>
 <!--WP: End of Widget of Map-->

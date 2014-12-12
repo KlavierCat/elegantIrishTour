@@ -19,6 +19,7 @@
 
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri();?>/images/favicon.png"/>
 
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/leaflet.css" rel="stylesheet"/>
     <!--Original Head Tag from Dora-->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/jquery-ui-1.10.1.custom.css" type="text/css" media="screen"/>

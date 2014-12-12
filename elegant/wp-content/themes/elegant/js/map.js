@@ -2,14 +2,14 @@
 	var map = new L.Map('map',{
 		zoomControl:false,
 		//maxZoom:10,
-		//	minZoom:16,
+		//minZoom:16,
 		//maxBounds:[[55.534053,-10.958147],[51.261036,-4.926653]]
 	});
 
   //map.setView(new L.LatLng(53.4152431,-8.2390307),7);
 
-	//Disable zoom handlers, disable dragging function;
-	map.dragging.disable();
+	//Disable zoom handlers;
+	//map.dragging.disable();
 	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
@@ -22,8 +22,6 @@
 		[51.497610,-5.657244]
 	]);
 
-  //map.panTo(new L.LatLng(53.4152431,-8.2390307));
-
 	var imageUrl= "map/ireland.jpg",
 	imageBounds = [[55.534053,-10.958147],[51.261036,-4.926653]]; //northWest, southEast
 
@@ -35,33 +33,62 @@
     iconUrl:'map/favicon.png',
     iconSize:[32,32],
     iconAnchor:[16,16]
-  })
+  });
 
-//points = [ID{int}, Lat{float}, Lng{float}, title{str}]
-  var points=[
-    [0, 55.240807, -6.511555, "Giant's Causeway"],
-    [1, 54.608018, -5.910215, "Titanic Belfast"],
-    [2, 53.561639, -9.889313, "Kylmore Abbey"],
-    [3, 53.007646,-9.001707, "The Burren"],
-    [4, 52.9718815, -9.426506, "Cliffs of Moher"],
-    [5, 53.534451, -9.284623, "Ashford Castle"],
-    [6, 53.694712, -6.475492, "Newgrange"],
-    [7, 53.3243201, -6.251695, "Dublin City"],
-    [8, 52.650462, -7.249298, "Kilkenny Castle"],
-    [9, 52.259476, -7.106794, "Waterford Crystal"],
-    [10, 52.005845, -9.55618, "Killarney National Park"],
-    [11, 51.929092,-8.570885, "Blarney Castle"]
-  ]
+//points = [ID{str}, Lat{float}, Lng{float}, title{str}, imgURL{str}]
+//loaded from attractions.js
 
 //define a function to add markers
+var marker = [];
 function add_marker(points){
-  var marker = [];
   var i;
-  for (i=0;i<points.length;i++){
+	var row_max = points.length;
+	//var mapNav = document.getElementById("map-nav");
+
+  for (i=0;i<row_max;i++){
     marker[i] = new L.marker([points[i][1], points[i][2]],{icon:imageIcon});
-    marker[i].bindPopup("<b>"+points[i][3]+"</b>");
-    marker[i].addTo(map);
-  }
-}
+    marker[i].bindPopup("<b>"+points[i][3]+"</b>"+"<img class='attr-img' src=" + points[i][4]+">");
+		marker[i].options.title = points[i][3];
+    //marker[i].addTo(map);
+		map.addLayer(marker[i]);
+
+		//var rowNode = document.createElement("div");
+		//rowNode.className = "attraction";
+		//rowNode.innerHTML = points[i][3];
+		//rowNode.id = points[i][0];
+
+	//function markerFunction(){
+	//	for (i in marker){
+	//		var markerID = marker[i].options.title;
+	//		if (markerID == rowNode.id){
+	//			console.log(markerID + " = " + rowNode.id);
+	//				marker[i].openPopup();
+	//				break;
+	//			};
+	//		};
+	//	}
+
+	//	rowNode.addEventListener('click', markerFunction, false);
+	//	mapNav.appendChild(rowNode);
+	};
+
+};
 
 add_marker(points);
+
+//function markerFunction(id){
+//	for (i in marker){
+//		var markerID = marker[i].options.title;
+//		if (markerID == id){
+//			console.log(markerID + " = " + id);
+//			marker[i].openPopup();
+//			break;
+//		};
+//	};
+//};
+
+//$(document).ready(function(){
+//	$(".attraction").on("click",function(){
+//		markerFunction($(this)[0].id);
+//	});
+//});
