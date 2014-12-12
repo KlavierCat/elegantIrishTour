@@ -1547,3 +1547,8 @@ h1{
     margin-top:20%;
 }
 */
+@media only screen and (max-width:783px) and (min-width:481px){
+	#city_folio li{
+		padding:10px;
+	}
+}
