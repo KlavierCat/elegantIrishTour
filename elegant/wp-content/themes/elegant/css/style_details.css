@@ -1,4 +1,4 @@
-﻿  body{background: #f1f1f1;}      
+﻿  body{background: #f1f1f1;}
  .bubble-text {
     border: 1px solid #DFDFDF;
      background: #ffffff;
@@ -27,7 +27,7 @@ ul, ol, li {
 .fright i{ font-size: 28px;}
 .fright a{text-decoration: none;color: #fff;}
 .fright{margin: 20px 0 0 0;}
-.str_description 
+.str_description
 {
     border: 1px solid #DFDFDF;
      background: #ffffff;
@@ -44,8 +44,8 @@ ul, ol, li {
  }
 
 /* slideshow images (for most of the demos, these are the actual "slides") */
-.cycle-slideshow img { 
-    /* 
+.cycle-slideshow img {
+    /*
     some of these styles will be set by the plugin (by default) but setting them here
     helps avoid flash-of-unstyled-content
     */
@@ -59,12 +59,12 @@ ul, ol, li {
 }
 
 /* pager */
-.cycle-pager { 
+.cycle-pager {
     text-align: center; width: 100%; z-index: 500;margin-left: 20px; position: absolute; top: 10px; overflow: hidden;
 }
-.cycle-pager span { 
-    font-family: arial; font-size: 50px; width: 16px; height: 18px; 
-    display: inline-block; color: #ddd; cursor: pointer; 
+.cycle-pager span {
+    font-family: arial; font-size: 50px; width: 16px; height: 18px;
+    display: inline-block; color: #ddd; cursor: pointer;
 }
 .cycle-pager span.cycle-pager-active { color: #1b1b1b;}
 .cycle-pager > * { cursor: pointer;}
@@ -75,7 +75,7 @@ ul, ol, li {
 
 
 /* overlay */
-.cycle-overlay { 
+.cycle-overlay {
     font-family: tahoma, arial;
     position: absolute; bottom: 0; width: 100%; z-index: 600;
     background: black; color: white; padding: 15px; opacity: .5;
@@ -99,8 +99,8 @@ ul, ol, li {
     opacity: .5; filter: alpha(opacity=50);
 }
 
-/* 
-    media queries 
+/*
+    media queries
     some style overrides to make things more pleasant on mobile devices
 */
 
@@ -108,4 +108,47 @@ ul, ol, li {
     .cycle-slideshow { width: 200px;}
     .cycle-overlay { padding: 4px }
     .cycle-caption { bottom: 4px; right: 4px }
+}
+
+@media only screen and (max-width:766px){
+  #mobile-hide{
+    display: none;
+  }
+  #mobile-shorten{
+    padding:0px;
+    line-height:40px;
+    font-size:25px;
+    text-align:center;
+  }
+}
+
+#tour-image{
+    /*width:320px;
+    height:auto;*/
+    max-width:inherit;
+    max-height:inherit;
+}
+
+/*@media only screen and (min-width: 767px) and (max-width: 1023px){
+  .tour-image-wrap{
+    width:228px;
+  }
+}*/
+
+#eduardo_booking_widget{
+  width:320px;
+  height:600px;
+  display:block;
+  position:static;
+  margin-top:20px;
+}
+
+#mobile-hide{
+  min-height:260px;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1023px){
+  #mobile-hide{
+    min-height:180px;
+  }
 }
