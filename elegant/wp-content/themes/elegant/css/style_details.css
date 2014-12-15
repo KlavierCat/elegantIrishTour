@@ -1,4 +1,4 @@
-﻿  body{background: #f1f1f1;}
+  body{background: #f1f1f1;}
  .bubble-text {
     border: 1px solid #DFDFDF;
      background: #ffffff;
@@ -116,6 +116,7 @@ ul, ol, li {
   }
   #mobile-shorten{
     padding:0px;
+    padding-top:20px;
     line-height:40px;
     font-size:25px;
     text-align:center;
@@ -151,4 +152,17 @@ ul, ol, li {
   #mobile-hide{
     min-height:180px;
   }
+}
+
+#nav-back{
+    position:absolute;
+    top:10px;
+    right:30px;
+}
+
+@media only screen and (max-width:479px){
+    #nav-back{
+        right:10px;
+        top:30px;
+    }
 }

@@ -17,7 +17,7 @@ get_header(); ?>
             <div id="logo" class="fleft">
                 <a href="<?php bloginfo('url');?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt=""/></a>
             </div>
-            <div id="nav" class="fright">
+            <div id="nav-back" class="fright">
                 <a href="<?php bloginfo('url');?>"><i class="icon-reply"></i></a>
             </div>
 

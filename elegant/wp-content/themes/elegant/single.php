@@ -17,7 +17,7 @@ get_header(); ?>
             <div id="logo" class="fleft">
                 <a href="<?php bloginfo('url');?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt=""/></a>
             </div>
-            <div id="nav" class="fright">
+            <div id="nav-back" class="fright">
                 <a href="<?php bloginfo('url');?>"><i class="icon-reply"></i></a>
             </div>
 
@@ -31,7 +31,7 @@ get_header(); ?>
         <h4 id="mobile-shorten"><?php the_title(); ?></h4>
 
 <!--left-->
-        <div class="left grid_4">
+        <div class="left grid_4" id="widget-left">
         <!--left-pic-->
             <div class="grid_12" id="mobile-hide">
               <div class="cycle-slideshow featured-image" data-cycle-fx="scrollHorz" data-cycle-timeout="2000">
@@ -59,7 +59,7 @@ get_header(); ?>
 <!--end of left-->
 
 <!--right-->
-        <div class="right grid_7">
+        <div class="right grid_7" id="widget-right">
     <!--right included-->
                 <div class="grid_12" style="margin-right: 0;">
 
