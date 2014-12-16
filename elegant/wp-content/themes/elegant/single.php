@@ -83,6 +83,20 @@ get_header(); ?>
                     }
                   ?>
                   <!--end of inclusion metabox-->
+                    
+                  <!--beginning of menu metabox-->
+                    <?php $menu_url = get_post_meta(get_the_ID(), 'menu', true); ?>
+                    <?php if($menu_url) { ?>
+                        <ul class="tour-meta">
+                            <li><h3><strong>Menu</strong></h3></li>
+                        </ul>
+                        <div>
+                            <ul class="tour-meta">
+                                <li><i class='icon-map-marker'></i><a target="_blank" href="<?php echo $menu_url; ?>">View details</a></li>
+                            </ul>
+                        </div>
+                    <?php } ?>
+                  <!--end of menu metabox-->
                 </div>
     <!--end of included-->
 
