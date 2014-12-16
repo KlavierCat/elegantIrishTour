@@ -49,12 +49,14 @@ get_header(); ?>
     <!--end of left pic-->
 
     <!--left-widget-->
+        <?php $tour_id = get_post_meta(get_the_ID(), 'tour_id', true); ?>
+        <?php if($tour_id) { ?>
             <div class="grid_12" id="eduardo_booking_widget">
-              <p>Booking Widget</p>
-              <p>320px x 600px</p>
-            </div>
-    <!--end of left-widget-->
+	    	  <script type="text/javascript">url = parent.document.URL; document.write('<iframe frameBorder="0" width="320" height="650" src="http://paddywagontours.com/admin/widget/tour_chosen?url=' + url + '&tour_id=<?php echo  $tour_id; ?>"></iframe>');</script>        
+	       </div>
+<?php } ?>
 
+    <!--end of left-widget-->
         </div><!--left, grid_4-->
 <!--end of left-->
 
@@ -89,7 +91,9 @@ get_header(); ?>
                   <h3><strong>Itinerary</strong></h3>
                   <?php the_content(); ?>
                   <!--<input type="submit" class="contact_btn send_btn" value="Book Now" />-->
+<?php if(!$tour_id) { ?>
                   <input type="reset" class="contact_btn" value="Ask a Question" onclick="window.location='<?php bloginfo('url');?>#contactForm'" />
+<?php } ?>
                 </div><!--tour-content-->
     <!--end of right itinerary-->
         </div><!--right, grid_8-->

@@ -140,8 +140,8 @@
 	          <ul id="city_folio">
 	              <li id="africa_folio" class="active">Day Tours</li>
 	              <li id="europe_folio">Multi-Day Tours</li>
-                <li id="america_folio">Golf Tours</li>
-                <li id="asia_folio">Shore Tours</li>
+                <!--<li id="america_folio">Golf Tours</li>
+                <li id="asia_folio">Shore Tours</li>-->
 	          </ul>
 
             <div><!--Categories: Day Tours-->

@@ -207,10 +207,6 @@
 
 	.fright{float:none;}
 	.fleft{float:none;}
-
-     .serv_block{
-        height:286px;
-    }
 }
 
 @media screen and (max-width : 479px)
