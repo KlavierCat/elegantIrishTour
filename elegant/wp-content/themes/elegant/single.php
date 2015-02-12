@@ -71,7 +71,7 @@ get_header(); ?>
                     $inclusion = $custom_fields['included'];
                     if (!empty($inclusion)){
                       echo "<ul class='tour-meta'>";
-                      echo "<li><h3><strong>Included</strong></h3></li>";
+                      echo "<li><h3><strong>Price</strong></h3></li>";
                       echo "</ul>";
                       echo "<div>";
                       echo "<ul class='tour-meta'>";
@@ -102,7 +102,7 @@ get_header(); ?>
 
     <!-- right itinerary-->
                 <div class="grid_12">
-                  <h3><strong>Itinerary</strong></h3>
+                  <!--<h3><strong>Itinerary</strong></h3>-->
                   <?php the_content(); ?>
                   <!--<input type="submit" class="contact_btn send_btn" value="Book Now" />-->
 <?php if(!$tour_id) { ?>
